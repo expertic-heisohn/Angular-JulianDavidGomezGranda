@@ -1,3 +1,10 @@
-<h1> {{value.time}} : {{value.location}} </h1>
-<p> Location: {{value.location}} </p>
-<p> Description: {{value.description}} </p>
+<div *ngIf="isLogged; else loggedOut">
+    Welcome back, friend.
+  </div>
+
+  <ng-template #loggedOut>
+    Please friend, login.
+  </ng-template>
+<p class="p-3 blue-grey lighten-5 blue-grey lighten-5" *ngIf="value.description">
+  {{ value.description }}
+</p>
